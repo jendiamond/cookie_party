@@ -1,4 +1,13 @@
 Cookieparty::Application.routes.draw do
+
+  resources :most_traditional_votes
+
+  resources :most_delicious_votes
+
+  resources :most_decorative_votes
+
+  resources :best_in_show_votes
+
   resources :results
 
   resources :awards

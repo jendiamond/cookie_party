@@ -1,4 +1,4 @@
-<h1>Listing entries</h1>
+<h1>Best in Show</h1>
 
 <table>
   <thead>
@@ -16,14 +16,108 @@
       <tr>
         <td><%= entry.cookie %></td>
         <td><%= entry.baker %></td>
+        <td><%= pluralize(entry.best_in_show_votes.count, "vote") %></td>
+        <td><%= button_to '+1', best_in_show_votes_path(entry_id: entry.id), method: :post %></td>
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
 
 <br>
+
+<h1>Most Decorative</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cookie</th>
+      <th>Baker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.cookie %></td>
+        <td><%= entry.baker %></td>
+        <td><%= pluralize(entry.most_decorative_votes.count, "vote") %></td>
+        <td><%= button_to '+1', most_decorative_votes_path(entry_id: entry.id), method: :post %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<h1>Most Delicious</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cookie</th>
+      <th>Baker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.cookie %></td>
+        <td><%= entry.baker %></td>
+        <td><%= pluralize(entry.most_delicious_votes.count, "vote") %></td>
+        <td><%= button_to '+1', most_delicious_votes_path(entry_id: entry.id), method: :post %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+<h1>Most Traditional</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cookie</th>
+      <th>Baker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.cookie %></td>
+        <td><%= entry.baker %></td>
+        <td><%= pluralize(entry.most_traditional_votes.count, "vote") %></td>
+        <td><%= button_to '+1', most_traditional_votes_path(entry_id: entry.id), method: :post %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
 
 <%= link_to 'New Entry', new_entry_path %>

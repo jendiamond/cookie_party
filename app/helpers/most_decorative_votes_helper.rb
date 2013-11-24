@@ -1,0 +1,2 @@
+module MostDecorativeVotesHelper
+end

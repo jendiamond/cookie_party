@@ -1,0 +1,2 @@
+module BestInShowVotesHelper
+end
