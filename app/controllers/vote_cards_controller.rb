@@ -1,74 +1,74 @@
-class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+class VoteCardsController < ApplicationController
+  before_action :set_vote_card, only: [:show, :edit, :update, :destroy]
 
-  # GET /users
-  # GET /users.json
+  # GET /vote_cards
+  # GET /vote_cards.json
   def index
-    @users = User.all
+    @vote_cards = VoteCard.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
+  # GET /vote_cards/1
+  # GET /vote_cards/1.json
   def show
   end
 
-  # GET /users/new
+  # GET /vote_cards/new
   def new
-    @user = User.new
+    @vote_card = VoteCard.new
   end
 
-  # GET /users/1/edit
+  # GET /vote_cards/1/edit
   def edit
   end
 
-  # POST /users
-  # POST /users.json
+  # POST /vote_cards
+  # POST /vote_cards.json
   def create
-    @user = User.new(user_params)
+    @vote_card = VoteCard.new(vote_card_params)
 
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @user }
+      if @vote_card.save
+        format.html { redirect_to @vote_card, notice: 'VoteCard was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @vote_card }
       else
         format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @vote_card.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
+  # PATCH/PUT /vote_cards/1
+  # PATCH/PUT /vote_cards/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+      if @vote_card.update(vote_card_params)
+        format.html { redirect_to @vote_card, notice: 'VoteCard was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @vote_card.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
+  # DELETE /vote_cards/1
+  # DELETE /vote_cards/1.json
   def destroy
-    @user.destroy
+    @vote_card.destroy
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to vote_cards_url }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
+    def set_vote_card
+      @vote_card = VoteCard.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:name)
+    def vote_card_params
+      params.require(:vote_card).permit(:name)
     end
 end
