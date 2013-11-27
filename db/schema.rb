@@ -11,19 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131124003351) do
-
-  create_table "awards", force: true do |t|
-    t.string   "award_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "best_in_show_votes", force: true do |t|
-    t.integer  "entry_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20131123001615) do
 
   create_table "entries", force: true do |t|
     t.string   "cookie"
@@ -32,34 +20,12 @@ ActiveRecord::Schema.define(version: 20131124003351) do
     t.datetime "updated_at"
   end
 
-  create_table "most_decorative_votes", force: true do |t|
-    t.integer  "entry_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "most_delicious_votes", force: true do |t|
-    t.integer  "entry_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "most_traditional_votes", force: true do |t|
-    t.integer  "entry_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "results", force: true do |t|
-    t.integer  "award_id"
-    t.integer  "entry_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
+  create_table "vote_cards", force: true do |t|
     t.string   "name"
+    t.integer  "best_in_show_id"
+    t.integer  "most_delicious_id"
+    t.integer  "most_decorative_id"
+    t.integer  "most_traditional_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

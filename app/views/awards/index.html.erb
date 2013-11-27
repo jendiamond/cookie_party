@@ -25,3 +25,41 @@
 <br>
 
 <%= link_to 'New Award', new_award_path %>
+
+
+<%= link_to 'New Entry', new_entry_path %>
+
+=begin
+
+<h1>Best in Show</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cookie</th>
+      <th>Baker</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.cookie %></td>
+        <td><%= entry.baker %></td>
+        <td><%= pluralize(entry.best_in_show_votes.count, "vote") %></td>
+        <td><%= button_to '+1', best_in_show_votes_path(entry_id: entry.id), method: :post %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<br>
+
+
