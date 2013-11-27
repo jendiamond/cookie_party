@@ -15,6 +15,23 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label :best_in_show_id, "Best in Show" %><br>
+    <%= f.collection_select :best_in_show_id, @entries, :id, :cookie %>
+  </div>
+  <div class="field">
+    <%= f.label :most_delicious_id, "Most Delicious" %><br>
+    <%= f.collection_select :most_delicious_id, @entries, :id, :cookie %>
+  </div>
+  <div class="field">
+    <%= f.label :most_decorative_id, "Most Decorative" %><br>
+    <%= f.collection_select :most_decorative_id, @entries, :id, :cookie %>
+  </div>
+  <div class="field">
+    <%= f.label :most_traditional_id, "Most Traditional" %><br>
+    <%= f.collection_select :most_traditional_id, @entries, :id, :cookie %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

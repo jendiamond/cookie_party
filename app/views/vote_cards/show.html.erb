@@ -5,6 +5,26 @@
   <%= @vote_card.name %>
 </p>
 
+<p>
+  <strong>Best in Show: </strong>
+  <%= @vote_card.best_in_show.cookie %>
+</p>
+
+<p>
+  <strong>Most Delicious: </strong>
+  <%= @vote_card.most_delicious.cookie %>
+</p>
+
+<p>
+  <strong>Most Decorative: </strong>
+  <%= @vote_card.most_decorative.cookie %>
+</p>
+
+<p>
+  <strong>Most Traditional: </strong>
+  <%= @vote_card.most_traditional.cookie %>
+</p>
+
 <%= link_to 'Edit', edit_vote_card_path(@vote_card) %> |
 <%= link_to 'Back', vote_cards_path %>
 

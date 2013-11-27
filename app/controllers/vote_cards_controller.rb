@@ -1,6 +1,6 @@
 class VoteCardsController < ApplicationController
   before_action :set_vote_card, only: [:show, :edit, :update, :destroy]
-
+  before_action :load_entries, only: [:new, :edit]
   # GET /vote_cards
   # GET /vote_cards.json
   def index
@@ -69,6 +69,9 @@ class VoteCardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vote_card_params
-      params.require(:vote_card).permit(:name)
+      params.require(:vote_card).permit(:name, :best_in_show_id, :most_delicious_id, :most_decorative_id, :most_traditional_id)
+    end
+    def load_entries
+      @entries = Entry.all
     end
 end
