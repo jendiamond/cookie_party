@@ -12,27 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <div id="voter"><%= f.label :name, "Your Name" %>
+    <%= f.text_field :name %></div>
   </div>
+  <hr />
   <div class="field">
-    <%= f.label :best_in_show_id, "Best in Show" %><br>
-    <%= f.collection_select :best_in_show_id, @entries, :id, :cookie %>
+    <div id="vote"><%= f.label :best_in_show_id, "Best in Show" %>
+    &#10057; &#10053; <%= f.collection_select :best_in_show_id, @entries, :id, :cookie %></div>
   </div>
+  <hr />
   <div class="field">
-    <%= f.label :most_delicious_id, "Most Delicious" %><br>
-    <%= f.collection_select :most_delicious_id, @entries, :id, :cookie %>
+    <div id="vote"><%= f.label :most_delicious_id, "Most Delicious" %>
+     &#10057; &#10053; <%= f.collection_select :most_delicious_id, @entries, :id, :cookie %></div>
   </div>
+  <hr />
   <div class="field">
-    <%= f.label :most_decorative_id, "Most Decorative" %><br>
-    <%= f.collection_select :most_decorative_id, @entries, :id, :cookie %>
+    <div id="vote"><%= f.label :most_decorative_id, "Most Decorative" %>
+    &#10057; &#10053; <%= f.collection_select :most_decorative_id, @entries, :id, :cookie %></div>
   </div>
+  <hr />
   <div class="field">
-    <%= f.label :most_traditional_id, "Most Traditional" %><br>
-    <%= f.collection_select :most_traditional_id, @entries, :id, :cookie %>
+    <div id="vote"><%= f.label :most_traditional_id, "Most Traditional" %>
+    &#10057; &#10053; <%= f.collection_select :most_traditional_id, @entries, :id, :cookie %></div>
   </div>
-
-  <div class="actions">
+  <hr />
+  <div class="actions" style="background-color:#6cf; padding: 5px 5px 5px 5px; border-color:#686868;  border-style:solid; border-width:2px;">
     <%= f.submit %>
   </div>
 <% end %>

@@ -1,28 +1,32 @@
-<h1>Listing vote_cards</h1>
+<body style="background-image: url(<%= asset_path 'degrated.jpg' %>);  background-color:#686868;">
+<%= stylesheet_link_tag "cookieparty" %>
+<div id="cookie_app_border">
+  <div id = "cp_container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <div id="header_image">
+    <%= link_to (image_tag("5th_annual_cookie_party2.gif", :alt => "Ross and Aymee's 5th Annual Cookie Pary")), "/" %>
+  </div> <!-- close header_image -->
 
-  <tbody>
-    <% @vote_cards.each do |vote_card| %>
-      <tr>
-        <td><%= vote_card.name %></td>
-        <td><%= link_to 'Show', vote_card %></td>
-        <td><%= link_to 'Edit', edit_vote_card_path(vote_card) %></td>
-        <td><%= link_to 'Destroy', vote_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div id="menu"><%= link_to 'VOTE', new_vote_card_path %> &nbsp; <%= link_to 'ALL VOTES', vote_cards_path %> &nbsp; <%= link_to 'ENTER A COOKIE', new_entry_path %> &nbsp; <%= link_to 'ALL ENTRIES', entries_path %></div>
 
-<br>
+    <div id="blurb_home">
+      <h2>Voters</h2>
+        <table id="table">
+          <tbody>
+            <% @vote_cards.each do |vote_card| %>
+            <tr id="row1">
+              <td id="column1"><%= vote_card.name %></td>
+              <td id="columncrud"><%= link_to 'Show', vote_card %></td>
+              <td id="columncrud"><%= link_to 'Edit', edit_vote_card_path(vote_card) %></td>
+              <td id="columncrud"><%= link_to 'Destroy', vote_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+           <% end %>
+          </tbody>
+        </table>
 
-<%= link_to 'New Vote Card', new_vote_card_path %>
+        <br>
 
+        <%= link_to 'New Vote Card', new_vote_card_path %>
+    </div>
+  </div>
+</div> <!-- cp_container -->

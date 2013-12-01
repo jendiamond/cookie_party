@@ -1,31 +1,44 @@
-<%= link_to 'New Entry', new_entry_path %>
+<body style="background-image: url(<%= asset_path 'degrated.jpg' %>);  background-color:#686868;">
+<%= stylesheet_link_tag "cookieparty" %>
+<div id="cookie_app_border">
+  <div id = "cp_container">
 
-<h1>Cookie Entries</h1>
+  <div id="header_image">
+    <%= link_to (image_tag("5th_annual_cookie_party2.gif", :alt => "Ross and Aymee's 5th Annual Cookie Pary")), "/" %>
+  </div> <!-- close header_image -->
 
-<table>
-  <thead>
-    <tr>
-      <th>Cookie</th>
-      <th>Baker</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <div id="menu"><%= link_to 'VOTE', new_vote_card_path %> &nbsp; <%= link_to 'ALL VOTES', vote_cards_path %> &nbsp; <%= link_to 'ENTER A COOKIE', new_entry_path %> &nbsp; <%= link_to 'ALL ENTRIES', entries_path %></div>
 
-  <tbody>
-    <% @entries.each do |entry| %>
-      <tr>
-        <td><%= entry.cookie %></td>
-        <td><%= entry.baker %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+      <%= link_to 'New Entry', new_entry_path %>
 
-  </tbody>
-</table>
+      <h1>Cookie Entries</h1>
 
-<br>
+      <table>
+        <thead>
+          <tr>
+            <th id="vote">Cookie</th>
+            <th id="vote">Baker</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <% @entries.each do |entry| %>
+            <tr id="row1_entry">
+              <td id="column1_entry"><%= entry.cookie %></td>
+              <td id="column1_entry"><%= entry.baker %></td>
+              <td id="columncrud"><%= link_to 'Show', entry %></td>
+              <td id="columncrud"><%= link_to 'Edit', edit_entry_path(entry) %></td>
+              <td id="columncrud"><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+
+      <br>
+    </div>
+  </div>
+</div> <!-- cp_container -->

@@ -1,7 +1,20 @@
-<h1>Editing vote card</h1>
+<body style="background-image: url(<%= asset_path 'degrated.jpg' %>);  background-color:#686868;">
+<%= stylesheet_link_tag "cookieparty" %>
+<div id="cookie_app_border">
+  <div id = "cp_container">
 
-<%= render 'form' %>
+  <div id="header_image">
+    <%= link_to (image_tag("5th_annual_cookie_party2.gif", :alt => "Ross and Aymee's 5th Annual Cookie Pary")), "/" %>
+  </div> <!-- close header_image -->
 
-<%= link_to 'Show', @vote_card %> |
-<%= link_to 'Back', vote_cards_path %>
+    <div id="menu"><%= link_to 'VOTE', new_vote_card_path %> &nbsp; <%= link_to 'ALL VOTES', vote_cards_path %> &nbsp; <%= link_to 'ENTER A COOKIE', new_entry_path %> &nbsp; <%= link_to 'ALL ENTRIES', entries_path %></div>
 
+      <h1>Edit Your Vote Card</h1>
+
+      <%= render 'form' %>
+
+      <%= link_to 'Show', @vote_card %> |
+      <%= link_to 'Back', vote_cards_path %>
+    </div>
+  </div>
+</div> <!-- cp_container -->
