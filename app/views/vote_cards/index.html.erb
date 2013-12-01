@@ -1,32 +1,31 @@
-<body style="background-image: url(<%= asset_path 'degrated.jpg' %>);  background-color:#686868;">
-<%= stylesheet_link_tag "cookieparty" %>
+<body style="background-color:#686868; background-image: url(<%= asset_path 'degrated.jpg' %>);">
+
 <div id="cookie_app_border">
   <div id = "cp_container">
 
   <div id="header_image">
     <%= link_to (image_tag("5th_annual_cookie_party2.gif", :alt => "Ross and Aymee's 5th Annual Cookie Pary")), "/" %>
-  </div> <!-- close header_image -->
+  </div> <!-- header_image -->
 
-    <div id="menu"><%= link_to 'VOTE', new_vote_card_path %> &nbsp; <%= link_to 'ALL VOTES', vote_cards_path %> &nbsp; <%= link_to 'ENTER A COOKIE', new_entry_path %> &nbsp; <%= link_to 'ALL ENTRIES', entries_path %></div>
+    <div id="menu"><%= link_to 'VOTE', new_vote_card_path %> &nbsp; <%= link_to 'ALL VOTES', vote_cards_path %> &nbsp; <%= link_to 'ENTER A COOKIE', new_entry_path %> &nbsp; <%= link_to 'ALL ENTRIES', entries_path %></div> <!-- menu -->
 
-    <div id="blurb_home">
+    <div id="blurb">
       <h2>Voters</h2>
-        <table id="table">
-          <tbody>
-            <% @vote_cards.each do |vote_card| %>
-            <tr id="row1">
-              <td id="column1"><%= vote_card.name %></td>
-              <td id="columncrud"><%= link_to 'Show', vote_card %></td>
-              <td id="columncrud"><%= link_to 'Edit', edit_vote_card_path(vote_card) %></td>
-              <td id="columncrud"><%= link_to 'Destroy', vote_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-           <% end %>
-          </tbody>
-        </table>
+      <table id="table">
+        <tbody>
+          <% @vote_cards.each do |vote_card| %>
+          <tr id="row1">
+            <td id="column1"><%= vote_card.name %></td>
+            <td id="columncrud"><%= link_to 'Show', vote_card %></td>
+            <td id="columncrud"><%= link_to 'Edit', edit_vote_card_path(vote_card) %></td>
+            <td id="columncrud"><%= link_to 'Destroy', vote_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <%= link_to 'New Vote Card', new_vote_card_path %>
+    </div> <!-- blurb -->
 
-        <br>
-
-        <%= link_to 'New Vote Card', new_vote_card_path %>
-    </div>
-  </div>
+  </div> <!-- cookie_app_border -->
 </div> <!-- cp_container -->

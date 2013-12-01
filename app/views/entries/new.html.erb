@@ -9,11 +9,14 @@
 
     <div id="menu"><%= link_to 'VOTE', new_vote_card_path %> &nbsp; <%= link_to 'ALL VOTES', vote_cards_path %> &nbsp; <%= link_to 'ENTER A COOKIE', new_entry_path %> &nbsp; <%= link_to 'ALL ENTRIES', entries_path %></div>
 
-      <h1>New entry</h1>
+    <div id="blurb">
+
+      <h1>Enter Your Cookie</h1>
 
       <%= render 'form' %>
 
       <%= link_to 'Back', entries_path %>
-    </div>
-  </div>
+    </div> <!-- blurb -->
+
+  </div> <!-- cookie_app_border -->
 </div> <!-- cp_container -->

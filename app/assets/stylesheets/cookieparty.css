@@ -1,6 +1,5 @@
 body {
-  background-image: url(<%= asset_path 'degrated.jpg' %>);
-  background-color: #ccc;
+  background-color: #686868;
   font-weight:bold;
 }
 
@@ -22,9 +21,6 @@ body {
   border-style:solid;
   border-width:3px;
   }
-/*  <div id="header_image">
-    <%= image_tag("5th_annual_cookie_party.gif", :alt => "Ross and Aymee's 5th Annual Cookie Pary") %>
-  </div> <!-- close header_image --> */
 
 #menu {
   background-color:#6cf;
