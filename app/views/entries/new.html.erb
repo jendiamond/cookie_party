@@ -4,18 +4,22 @@
   <div id = "cp_container">
 
   <div id="header_image">
-    <%= link_to (image_tag("5th_annual_cookie_party2.gif", :alt => "Ross and Aymee's 5th Annual Cookie Pary")), "/" %>
+    <%= link_to (image_tag("5th_annual_cookie_party2.gif", :alt => "Ross and Aymee's 5th Annual Cookie Party")), "/" %>
   </div> <!-- close header_image -->
 
     <div id="menu"><%= link_to 'VOTE', new_vote_card_path %> &nbsp; <%= link_to 'ALL VOTES', vote_cards_path %> &nbsp; <%= link_to 'ENTER A COOKIE', new_entry_path %> &nbsp; <%= link_to 'ALL ENTRIES', entries_path %></div>
 
     <div id="blurb">
-
+      <div >
       <h1>Enter Your Cookie</h1>
 
       <%= render 'form' %>
 
       <%= link_to 'Back', entries_path %>
+      </div>
+      <div >
+        <%= image_tag("cookie.gif", :alt => "Cookie") %> <%= image_tag("cookie.gif", :alt => "Cookie") %>
+      </div>
     </div> <!-- blurb -->
 
   </div> <!-- cookie_app_border -->
