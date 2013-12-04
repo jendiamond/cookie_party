@@ -1,19 +1,22 @@
-<p id="notice"><%= notice %></p>
-
+<h1> Results of the Cookie Party!</h1>
 <p>
-  <strong>Award:</strong>
-  <%= @result.award_id %>
+  <strong>Best in Show: </strong>
+  <%= @results.best_in_show.cookie %>
 </p>
 
 <p>
-  <strong>Entry:</strong>
-  <%= @result.entry_id %>
+  <strong>Most Delicious: </strong>
+  <%= @results.most_delicious.cookie %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @result.user_id %>
+  <strong>Most Decorative: </strong>
+  <%= @results.most_decorative.cookie %>
 </p>
 
-<%= link_to 'Edit', edit_result_path(@result) %> |
-<%= link_to 'Back', results_path %>
+<p>
+  <strong>Most Traditional: </strong>
+  <%= @results.most_traditional.cookie %>
+</p>
+
+<%= link_to 'Back', "/" %>
