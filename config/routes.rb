@@ -1,6 +1,6 @@
 Cookieparty::Application.routes.draw do
 
-  resources :results
+  resource :results
 
   resources :vote_cards
 
