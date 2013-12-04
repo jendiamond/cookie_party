@@ -1,43 +1,29 @@
-<body style="background-image: url(<%= asset_path 'degrated.jpg' %>);  background-color:#686868;">
-<%= stylesheet_link_tag "cookieparty" %>
-<div id="cookie_app_border">
-  <div id = "cp_container">
 
-  <div id="header_image">
-    <%= link_to (image_tag("5th_annual_cookie_party2.gif", :alt => "Ross and Aymee's 5th Annual Cookie Pary")), "/" %>
-  </div> <!-- close header_image -->
+<p id="notice"><%= notice %></p>
 
-    <div id="menu"><%= link_to 'VOTE', new_vote_card_path %> &nbsp; <%= link_to 'ALL VOTES', vote_cards_path %> &nbsp; <%= link_to 'ENTER A COOKIE', new_entry_path %> &nbsp; <%= link_to 'ALL ENTRIES', entries_path %></div>
+<h1>
+  <%= @vote_card.name %>'s Vote Card
+</h1>
 
-      <p id="notice"><%= notice %></p>
+<p>
+  <strong>Best in Show: </strong>
+  <%= @vote_card.best_in_show.cookie %>
+</p>
 
-      <h1>
-        <%= @vote_card.name %>'s Vote Card
-      </h1>
+<p>
+  <strong>Most Delicious: </strong>
+  <%= @vote_card.most_delicious.cookie %>
+</p>
 
-      <p>
-        <strong>Best in Show: </strong>
-        <%= @vote_card.best_in_show.cookie %>
-      </p>
+<p>
+  <strong>Most Decorative: </strong>
+  <%= @vote_card.most_decorative.cookie %>
+</p>
 
-      <p>
-        <strong>Most Delicious: </strong>
-        <%= @vote_card.most_delicious.cookie %>
-      </p>
+<p>
+  <strong>Most Traditional: </strong>
+  <%= @vote_card.most_traditional.cookie %>
+</p>
 
-      <p>
-        <strong>Most Decorative: </strong>
-        <%= @vote_card.most_decorative.cookie %>
-      </p>
-
-      <p>
-        <strong>Most Traditional: </strong>
-        <%= @vote_card.most_traditional.cookie %>
-      </p>
-
-      <%= link_to 'Edit', edit_vote_card_path(@vote_card) %> |
-      <%= link_to 'Back', vote_cards_path %>
-
-    </div>
-  </div>
-</div> <!-- cp_container -->
+<%= link_to 'Edit', edit_vote_card_path(@vote_card) %> |
+<%= link_to 'Back', vote_cards_path %>

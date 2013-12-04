@@ -1,22 +1,22 @@
 <h1> Results of the Cookie Party!</h1>
 <p>
   <strong>Best in Show: </strong>
-  <%= @results.best_in_show.cookie %>
+  <%= @results.best_in_show.cookie %>, <%= @results.best_in_show.best_in_show_votes.count %> Votes
 </p>
 
 <p>
   <strong>Most Delicious: </strong>
-  <%= @results.most_delicious.cookie %>
+  <%= @results.most_delicious.cookie %>, <%= @results.most_delicious.most_delicious_votes.count %> Votes
 </p>
 
 <p>
   <strong>Most Decorative: </strong>
-  <%= @results.most_decorative.cookie %>
+  <%= @results.most_decorative.cookie %>, <%= @results.most_decorative.most_decorative_votes.count %> Votes
 </p>
 
 <p>
   <strong>Most Traditional: </strong>
-  <%= @results.most_traditional.cookie %>
+  <%= @results.most_traditional.cookie %>, <%= @results.most_traditional.most_traditional_votes.count %> Votes
 </p>
 
 <%= link_to 'Back', "/" %>
